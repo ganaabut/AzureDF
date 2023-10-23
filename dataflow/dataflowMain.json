@@ -9,6 +9,9 @@
 						"referenceName": "SourceDataset_wsb",
 						"type": "DatasetReference"
 					},
+					"name": "sourceTxt"
+				},
+				{
 					"name": "source1"
 				}
 			],
@@ -49,7 +52,9 @@
 				"     ),",
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
-				"     ignoreNoFilesFound: false) ~> source1"
+				"     ignoreNoFilesFound: false) ~> sourceTxt",
+				"source(allowSchemaDrift: true,",
+				"     validateSchema: false) ~> source1"
 			]
 		}
 	}
