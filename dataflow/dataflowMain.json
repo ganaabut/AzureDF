@@ -72,7 +72,9 @@
 				"     ),",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true) ~> select1",
-				"select1 derive(Description = ERROR_FUNCTION('split(')) ~> split"
+				"select1 derive(Description = split(Description, \": [\")[1],",
+				"          Description2 = split(Description, \": [\")[2],",
+				"          Host = ERROR_FUNCTION('')) ~> split"
 			]
 		}
 	}
