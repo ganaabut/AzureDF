@@ -22,7 +22,8 @@
 			"sinks": [],
 			"transformations": [
 				{
-					"name": "selectFew"
+					"name": "selectFew",
+					"description": "Remove columns"
 				}
 			],
 			"scriptLines": [
@@ -70,36 +71,11 @@
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> source1",
 				"sourceTxt select(mapColumn(",
-				"          CVE,",
-				"          CVSS,",
-				"          Risk,",
 				"          Host,",
-				"          Protocol,",
-				"          Port,",
 				"          Name,",
-				"          Synopsis,",
 				"          Description,",
-				"          Solution,",
-				"          {See Also},",
-				"          {Plugin Output},",
-				"          {Asset UUID},",
-				"          {Vulnerability State},",
 				"          {IP Address},",
-				"          {Plugin Family},",
-				"          {CVSS Base Score},",
-				"          {CVSS Temporal Score},",
-				"          {CVSS Temporal Vector},",
-				"          {CVSS Vector},",
-				"          {CVSS3 Base Score},",
-				"          {CVSS3 Temporal Score},",
-				"          {CVSS3 Temporal Vector},",
-				"          {CVSS3 Vector},",
-				"          {System Type},",
-				"          {Host Start},",
-				"          {Host End},",
-				"          {Vulnerability Priority Rating (VPR)},",
-				"          {First Found},",
-				"          {Last Found}",
+				"          {Host Start}",
 				"     ),",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true) ~> selectFew"
