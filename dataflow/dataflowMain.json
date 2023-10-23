@@ -32,6 +32,10 @@
 				{
 					"name": "split1",
 					"description": "Split into StigID"
+				},
+				{
+					"name": "split2",
+					"description": "Split into Status"
 				}
 			],
 			"scriptLines": [
@@ -91,7 +95,8 @@
 				"          Description2 = split(Description, \": [\")[2],",
 				"          HostUpper = upper(Host)) ~> split",
 				"split derive(STIGID1 = split(Description, \" - \"),",
-				"          Host = ERROR_FUNCTION('trim(H')) ~> split1"
+				"          Host = trim(HostUpper)) ~> split1",
+				"split1 derive(Description2 = ERROR_FUNCTION('')) ~> split2"
 			]
 		}
 	}
