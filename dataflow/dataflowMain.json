@@ -24,6 +24,10 @@
 				{
 					"name": "selectFew",
 					"description": "Remove columns"
+				},
+				{
+					"name": "split",
+					"description": "split Description"
 				}
 			],
 			"scriptLines": [
@@ -78,7 +82,8 @@
 				"          {Host Start}",
 				"     ),",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> selectFew"
+				"     skipDuplicateMapOutputs: true) ~> selectFew",
+				"selectFew derive() ~> split"
 			]
 		}
 	}
