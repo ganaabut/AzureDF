@@ -83,7 +83,8 @@
 				"     ),",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true) ~> selectFew",
-				"selectFew derive(Description1 = ERROR_FUNCTION('')) ~> split"
+				"selectFew derive(Description1 = split(Description, \": [\")[1],",
+				"          column1 = ERROR_FUNCTION('')) ~> split"
 			]
 		}
 	}
