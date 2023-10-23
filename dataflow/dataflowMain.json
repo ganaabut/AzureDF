@@ -90,7 +90,8 @@
 				"selectFew derive(Description1 = split(Description, \": [\")[1],",
 				"          Description2 = split(Description, \": [\")[2],",
 				"          HostUpper = upper(Host)) ~> split",
-				"split derive(STIGID1 = ERROR_FUNCTION('split(Description, \" - \"')) ~> split1"
+				"split derive(STIGID1 = split(Description, \" - \"),",
+				"          Host = ERROR_FUNCTION('trim(H')) ~> split1"
 			]
 		}
 	}
