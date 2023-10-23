@@ -96,7 +96,7 @@
 				"          HostUpper = upper(Host)) ~> split",
 				"split derive(STIGID1 = split(Description, \" - \"),",
 				"          Host = trim(HostUpper)) ~> split1",
-				"split1 derive(Description2 = ERROR_FUNCTION('')) ~> split2"
+				"split1 derive(Status = ERROR_FUNCTION('split(Description2')) ~> split2"
 			]
 		}
 	}
