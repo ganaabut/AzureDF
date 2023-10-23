@@ -116,7 +116,7 @@
 				"     ),",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true) ~> removingColumns",
-				"removingColumns filter(Equals(Name, \"Windows Compliance Checks\")) ~> filterWindows"
+				"removingColumns filter(equals(Name, \"Windows Compliance Checks\")) ~> filterWindows"
 			]
 		}
 	}
