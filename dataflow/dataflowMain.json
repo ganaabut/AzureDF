@@ -12,10 +12,6 @@
 					"name": "sourceTxt"
 				},
 				{
-					"dataset": {
-						"referenceName": "Tenable",
-						"type": "DatasetReference"
-					},
 					"name": "source1"
 				}
 			],
@@ -58,8 +54,7 @@
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> sourceTxt",
 				"source(allowSchemaDrift: true,",
-				"     validateSchema: false,",
-				"     ignoreNoFilesFound: false) ~> "
+				"     validateSchema: false) ~> "
 			]
 		}
 	}
