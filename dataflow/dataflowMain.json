@@ -43,6 +43,9 @@
 				},
 				{
 					"name": "filterName"
+				},
+				{
+					"name": "filter1"
 				}
 			],
 			"scriptLines": [
@@ -114,7 +117,8 @@
 				"     ),",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true) ~> removingColumns",
-				"split2 filter(equals(Name, \"Windows Compliance Checks\")) ~> filterName"
+				"split2 filter(equals(Name, \"Windows Compliance Checks\")) ~> filterName",
+				"removingColumns filter(ERROR_FUNCTION('substring(')) ~> filter1"
 			]
 		}
 	}
