@@ -26,6 +26,9 @@
 				},
 				{
 					"name": "filteringWindows"
+				},
+				{
+					"name": "derivedColumn1"
 				}
 			],
 			"scriptLines": [
@@ -78,7 +81,8 @@
 				"select1 derive(Description = split(Description, \": [\")[1],",
 				"          Description2 = split(Description, \": [\")[2],",
 				"          Host = upper(Host)) ~> split",
-				"split filter(equals(Name, \"Windows Compliance Checks\")) ~> filteringWindows"
+				"split filter(equals(Name, \"Windows Compliance Checks\")) ~> filteringWindows",
+				"filteringWindows derive() ~> derivedColumn1"
 			]
 		}
 	}
