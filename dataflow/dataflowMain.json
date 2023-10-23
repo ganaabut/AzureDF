@@ -28,7 +28,18 @@
 					"name": "filteringWindows"
 				},
 				{
-					"name": "derivedColumn1"
+					"name": "split1"
+				},
+				{
+					"name": "StigClean",
+					"description": "Clean-up StigId"
+				},
+				{
+					"name": "removeExtra",
+					"description": "Remove extra Columns"
+				},
+				{
+					"name": "filterStigs"
 				}
 			],
 			"scriptLines": [
@@ -82,7 +93,20 @@
 				"          Description2 = split(Description, \": [\")[2],",
 				"          Host = upper(Host)) ~> split",
 				"split filter(equals(Name, \"Windows Compliance Checks\")) ~> filteringWindows",
-				"filteringWindows derive() ~> derivedColumn1"
+				"filteringWindows derive(STIGID = split(Description, \" - \")[1],",
+				"          Status = split(Description2, ']\"')[1],",
+				"          Host = trim(Host)) ~> split1",
+				"split1 derive(STIGID = replace(STIGID, '\"', '')) ~> StigClean",
+				"StigClean select(mapColumn(",
+				"          Host,",
+				"          {IP Address},",
+				"          {Host Start},",
+				"          STIGID,",
+				"          Status",
+				"     ),",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> removeExtra",
+				"removeExtra filter(like(STIGID, \"%WN%\")) ~> filterStigs"
 			]
 		}
 	}
