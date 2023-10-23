@@ -84,7 +84,8 @@
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true) ~> selectFew",
 				"selectFew derive(Description1 = split(Description, \": [\")[1],",
-				"          column1 = ERROR_FUNCTION('')) ~> split"
+				"          Description2 = split(Description, \": [\")[2],",
+				"          HostUpper = upper(Host)) ~> split"
 			]
 		}
 	}
