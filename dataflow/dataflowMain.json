@@ -118,7 +118,7 @@
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true) ~> removingColumns",
 				"split2 filter(equals(Name, \"Windows Compliance Checks\")) ~> filterName",
-				"removingColumns filter(ERROR_FUNCTION('substring(')) ~> filter1"
+				"removingColumns filter(STIGID<=>\"%DISA\") ~> filter1"
 			]
 		}
 	}
