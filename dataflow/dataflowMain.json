@@ -20,6 +20,9 @@
 				{
 					"name": "select1",
 					"description": "Remove columns"
+				},
+				{
+					"name": "split"
 				}
 			],
 			"scriptLines": [
@@ -68,7 +71,8 @@
 				"          {Host Start}",
 				"     ),",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> select1"
+				"     skipDuplicateMapOutputs: true) ~> select1",
+				"select1 derive(Description = ERROR_FUNCTION('split(')) ~> split"
 			]
 		}
 	}
