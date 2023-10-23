@@ -40,6 +40,10 @@
 				{
 					"name": "removingColumns",
 					"description": "Removing all extra Description Columns"
+				},
+				{
+					"name": "filterWindows",
+					"description": "Filtering Windows Complance Checks"
 				}
 			],
 			"scriptLines": [
@@ -111,7 +115,8 @@
 				"          Status",
 				"     ),",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> removingColumns"
+				"     skipDuplicateMapOutputs: true) ~> removingColumns",
+				"removingColumns filter(ERROR_FUNCTION('')) ~> filterWindows"
 			]
 		}
 	}
