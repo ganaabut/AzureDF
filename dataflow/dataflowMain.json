@@ -36,6 +36,10 @@
 				{
 					"name": "split2",
 					"description": "Split into Status"
+				},
+				{
+					"name": "removingColumns",
+					"description": "Removing all extra Description Columns"
 				}
 			],
 			"scriptLines": [
@@ -96,7 +100,21 @@
 				"          HostUpper = upper(Host)) ~> split",
 				"split derive(STIGID1 = split(Description1, \" - \")[1],",
 				"          Host = trim(HostUpper)) ~> split1",
-				"split1 derive(Status = split(Description2, ']\"')[1]) ~> split2"
+				"split1 derive(Status = split(Description2, ']\"')[1]) ~> split2",
+				"split2 select(mapColumn(",
+				"          Host,",
+				"          Name,",
+				"          Description,",
+				"          {IP Address},",
+				"          {Host Start},",
+				"          Description1,",
+				"          Description2,",
+				"          HostUpper,",
+				"          STIGID1,",
+				"          Status",
+				"     ),",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> removingColumns"
 			]
 		}
 	}
