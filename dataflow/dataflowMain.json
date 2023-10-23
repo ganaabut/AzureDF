@@ -28,6 +28,10 @@
 				{
 					"name": "split",
 					"description": "split Description"
+				},
+				{
+					"name": "split1",
+					"description": "Split "
 				}
 			],
 			"scriptLines": [
@@ -85,7 +89,8 @@
 				"     skipDuplicateMapOutputs: true) ~> selectFew",
 				"selectFew derive(Description1 = split(Description, \": [\")[1],",
 				"          Description2 = split(Description, \": [\")[2],",
-				"          HostUpper = upper(Host)) ~> split"
+				"          HostUpper = upper(Host)) ~> split",
+				"split derive() ~> split1"
 			]
 		}
 	}
