@@ -1,0 +1,143 @@
+{
+	"name": "SourceDataset_wsb",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "gn_Blob_Connection",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"sheetName": "May",
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "Scan.xlsx",
+				"container": "cnt-input"
+			},
+			"firstRowAsHeader": true
+		},
+		"schema": [
+			{
+				"name": "CVE",
+				"type": "String"
+			},
+			{
+				"name": "CVSS",
+				"type": "String"
+			},
+			{
+				"name": "Risk",
+				"type": "String"
+			},
+			{
+				"name": "Host",
+				"type": "String"
+			},
+			{
+				"name": "Protocol",
+				"type": "String"
+			},
+			{
+				"name": "Port",
+				"type": "String"
+			},
+			{
+				"name": "Name",
+				"type": "String"
+			},
+			{
+				"name": "Synopsis",
+				"type": "String"
+			},
+			{
+				"name": "Description",
+				"type": "String"
+			},
+			{
+				"name": "Solution",
+				"type": "String"
+			},
+			{
+				"name": "See Also",
+				"type": "String"
+			},
+			{
+				"name": "Plugin Output",
+				"type": "String"
+			},
+			{
+				"name": "Asset UUID",
+				"type": "String"
+			},
+			{
+				"name": "Vulnerability State",
+				"type": "String"
+			},
+			{
+				"name": "IP Address",
+				"type": "String"
+			},
+			{
+				"name": "Plugin Family",
+				"type": "String"
+			},
+			{
+				"name": "CVSS Base Score",
+				"type": "String"
+			},
+			{
+				"name": "CVSS Temporal Score",
+				"type": "String"
+			},
+			{
+				"name": "CVSS Temporal Vector",
+				"type": "String"
+			},
+			{
+				"name": "CVSS Vector",
+				"type": "String"
+			},
+			{
+				"name": "CVSS3 Base Score",
+				"type": "String"
+			},
+			{
+				"name": "CVSS3 Temporal Score",
+				"type": "String"
+			},
+			{
+				"name": "CVSS3 Temporal Vector",
+				"type": "String"
+			},
+			{
+				"name": "CVSS3 Vector",
+				"type": "String"
+			},
+			{
+				"name": "System Type",
+				"type": "String"
+			},
+			{
+				"name": "Host Start",
+				"type": "String"
+			},
+			{
+				"name": "Host End",
+				"type": "String"
+			},
+			{
+				"name": "Vulnerability Priority Rating (VPR)",
+				"type": "String"
+			},
+			{
+				"name": "First Found",
+				"type": "String"
+			},
+			{
+				"name": "Last Found",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

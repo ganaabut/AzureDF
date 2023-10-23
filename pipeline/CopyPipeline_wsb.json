@@ -1,0 +1,400 @@
+{
+	"name": "CopyPipeline_wsb",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy_wsb",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "cnt-input//Scan.xlsx"
+					},
+					{
+						"name": "Destination",
+						"value": "dbo.Scan"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "ExcelSource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"tableOption": "autoCreate"
+					},
+					"enableStaging": false,
+					"validateDataConsistency": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "CVE",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "CVE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CVSS",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "CVSS",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Risk",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Risk",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Host",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Host",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Protocol",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Protocol",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Port",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Port",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Name",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Name",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Synopsis",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Synopsis",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Description",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Description",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Solution",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Solution",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "See Also",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "See Also",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Plugin Output",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Plugin Output",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Asset UUID",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Asset UUID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Vulnerability State",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Vulnerability State",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "IP Address",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "IP Address",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Plugin Family",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Plugin Family",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CVSS Base Score",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "CVSS Base Score",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CVSS Temporal Score",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "CVSS Temporal Score",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CVSS Temporal Vector",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "CVSS Temporal Vector",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CVSS Vector",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "CVSS Vector",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CVSS3 Base Score",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "CVSS3 Base Score",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CVSS3 Temporal Score",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "CVSS3 Temporal Score",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CVSS3 Temporal Vector",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "CVSS3 Temporal Vector",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CVSS3 Vector",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "CVSS3 Vector",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "System Type",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "System Type",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Host Start",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Host Start",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Host End",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Host End",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Vulnerability Priority Rating (VPR)",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Vulnerability Priority Rating (VPR)",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "First Found",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "First Found",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Last Found",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Last Found",
+									"type": "String"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SourceDataset_wsb",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DestinationDataset_wsb",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2023-10-20T18:01:57Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

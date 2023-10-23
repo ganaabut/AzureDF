@@ -1,0 +1,9 @@
+{
+	"name": "df-opmtest",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "0fda7621-2a2c-414c-a6f4-c90ad2b96012",
+		"tenantId": "eaf9211f-d4a9-4656-b643-3bc04f4f6d92"
+	}
+}

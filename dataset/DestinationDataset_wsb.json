@@ -1,0 +1,17 @@
+{
+	"name": "DestinationDataset_wsb",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "gn_SQLDB_connection",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "Scan"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
